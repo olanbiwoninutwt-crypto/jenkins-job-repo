@@ -1,10 +1,29 @@
-# Jenkins Freestyle Demo
+# Jenkins CI Pipeline with Docker
 
-This is a simple static website used to demonstrate how Jenkins Freestyle Jobs work
+This project demonstrates a simple CI pipeline using **Jenkins, GitHub, Docker, and Docker Hub**.
 
-The Jenkins job will:
+The application is a basic HTML and CSS website.
 
-1. clone this repository.
-2. check that the website files exist.
-3. validate the content.
-4. Archive the website files.
+Whenever code is pushed to GitHub, a webhook automatically triggers Jenkins. Jenkins then checks the application files, builds a Docker image, and pushes it to Docker Hub.
+
+## Pipeline Flow
+
+```text
+Developer
+    ↓
+Git Push
+    ↓
+GitHub
+    ↓
+Webhook
+    ↓
+Jenkins
+    ↓
+Test
+    ↓
+Build Docker Image
+    ↓
+Push to Docker Hub
+    ↓
+Success
+```
